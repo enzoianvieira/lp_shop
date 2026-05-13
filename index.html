@@ -39,7 +39,7 @@
   --white:       #FFFFFF;
 }
 
-html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 
 body {
   background: var(--bg);
@@ -292,7 +292,7 @@ a { text-decoration: none; color: inherit; }
 
 .stats-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 16px;
 }
 
@@ -870,6 +870,48 @@ footer {
 /* ─────────────────────────────────────────────
    RESPONSIVE — TABLET (≥640px)
 ───────────────────────────────────────────── */
+/* ─────────────────────────────────────────────
+   RESPONSIVE — MOBILE (<640px)
+───────────────────────────────────────────── */
+@media (max-width: 639px) {
+  .stats-inner {
+    padding: 60px 20px;
+  }
+
+  .audience-pin-wrap {
+    padding: 60px 20px;
+    min-height: unset;
+  }
+
+  .audience-row {
+    gap: 16px;
+    padding: 22px 12px;
+  }
+
+  .audience-num,
+  .audience-v-rule,
+  .audience-arrow {
+    display: none;
+  }
+
+  .audience-icon-badge {
+    width: 44px;
+    height: 44px;
+  }
+
+  .audience-big-title {
+    font-size: clamp(40px, 11vw, 56px);
+  }
+
+  footer {
+    padding: 24px 20px;
+  }
+
+  .cta-form-panel {
+    padding: 32px 20px;
+  }
+}
+
 @media (min-width: 640px) {
   .stats-grid { grid-template-columns: 1fr 1fr; }
 }
